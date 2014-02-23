@@ -1,0 +1,4 @@
+== About 
+
+* Author: Paweł Okoń, Gdańsk University of Technology
+* Destination: Part of multiplatform aplication from Diploma project to synchronization data between webserwice and Android
