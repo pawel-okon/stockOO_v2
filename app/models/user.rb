@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
-attr_accessible :name, :email, :password, :password_confirmation
+  before_save :ensure_authentication_token
+  attr_accessible :name, :email, :password, :password_confirmation
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :validatable, :confirmable, :token_authenticatable
 
