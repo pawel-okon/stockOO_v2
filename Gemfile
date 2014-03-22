@@ -38,6 +38,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'protected_attributes'
+
 gem 'devise', '~> 3.0.0'
 
 # Use ActiveModel has_secure_password
