@@ -33,7 +33,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Token authenticatable
       t.string :authentication_token
 
-
       t.timestamps
     end
 
@@ -41,7 +40,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     t.string :name, :null => false, :default => ""
 
     add_index :users, :email,                :unique => true
-    add_index :users, :reset_password_token, :unique => true
+    # add_index :users, :reset_password_token, :unique => true
     add_index :users, :confirmation_token,   :unique => true
     # add_index :users, :unlock_token,         :unique => true
     add_index :users, :authentication_token, :unique => true
