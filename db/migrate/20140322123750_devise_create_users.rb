@@ -34,10 +34,10 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :authentication_token
 
       t.timestamps
-    end
+      ## Added possibility to specify user name at registration
+      t.string :name, :null => false, :default => ""
 
-    ## Added possibility to specify user name at registration
-    t.string :name, :null => false, :default => ""
+    end
 
     add_index :users, :email,                :unique => true
     # add_index :users, :reset_password_token, :unique => true
