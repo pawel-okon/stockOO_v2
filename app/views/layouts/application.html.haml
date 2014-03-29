@@ -7,13 +7,17 @@
     = stylesheet_link_tag    "bootstrap", :media => "all"
     = stylesheet_link_tag    "bootstrap-responsive", :media => "all"
     = csrf_meta_tags
-  %body
+    %body
     .container
       .navbar
         .navbar-inner
           .container
             %a.brand{:href => root_path}
               StockOO
+            %ul.nav
+              - main_menu.each do |section|
+                %li{:class => if section[:url] == request.path then "active" else "" end}
+                  %a{:href => section[:url]}= section[:label]
       .row
         .span8
           = yield
