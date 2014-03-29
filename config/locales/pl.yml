@@ -1,6 +1,25 @@
 pl:
-  menu_labels:
+  menu_labels: 
     home: "Home"
+    users: "Użytkownicy"
+    categories: "Kategorie"
+    manufacturers: "Producenci"
+    products: "Produkty"
+  actions:
+    edit: "Edycja"
+    delete: "Usuń"
   views:
     shared:
       sidebar_option_label: "Opcje"
+    users_index:
+      title: "Lista użytkowników"
+      confirm: "Czy napewno chcesz usunąć użytkownika %{user_name}?"
+      add_user: "Dodaj użytkownika"
+    categories_index:
+      add_category: "Dodaj kategorię"
+      title: "Lista kategorii"
+    manufacturers_index:
+      add_manufacturer: "Dodaj producenta"
+    products_index:
+      title: "Lista produktów"
+      add_product: "Dodaj produkt"
