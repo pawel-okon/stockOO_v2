@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title StockOO
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = stylesheet_link_tag    "bootstrap", :media => "all"
+    = stylesheet_link_tag    "bootstrap-responsive", :media => "all"
+    = csrf_meta_tags
+  %body
+    .container
+      .navbar
+        .navbar-inner
+          .container
+            %a.brand{:href => root_path}
+              StockOO
+      .row
+        .span8
+          = yield
+        .span4
+          = yield :sidebar

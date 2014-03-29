@@ -1,0 +1,6 @@
+pl:
+  menu_labels:
+    home: "Home"
+  views:
+    shared:
+      sidebar_option_label: "Opcje"

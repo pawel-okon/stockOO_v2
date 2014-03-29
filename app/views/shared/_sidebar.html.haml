@@ -1,0 +1,9 @@
+.well
+  %ul.nav.nav-list
+    %li.nav-header= t("views.shared.sidebar_option_label")
+    %li.divider
+    - options.each do |option|
+      %li
+        = link_to option[:url] do
+          %i{:class => option[:icon]}
+          = option[:label]
