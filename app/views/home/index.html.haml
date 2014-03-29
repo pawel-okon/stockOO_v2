@@ -1,2 +1,10 @@
 .page-header
   %h2 Nowe produkty
+%table.table
+  %tr
+    %th #
+    %th
+    %th
+    %th
+  = render :partial => "category", :collection => @categories
+  %table
