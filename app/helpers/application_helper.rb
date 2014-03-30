@@ -9,7 +9,7 @@ module ApplicationHelper
   def sidebar_options(view_name)
     case view_name
     when :categories_index
-      [{ :url => new_category_path, :icon => "icon-plus", :label => t("views.categories_index.add_category") }]
+      [{ :url => new_category_path, :icon => "icon-plus-sign", :label => t("views.categories.create") }]
   end
 end
 

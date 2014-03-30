@@ -7,6 +7,12 @@ pl:
         main: "Główna"
         category: "Kategorie"
     categories:
-      index: "Dodaj kategorię"
+      index: "Lista kategorii" 
+      create: "Dodaj kategorię"
+    shared:
+      sidebar_option_label: "Opcje:"
+      sidebar_back_to_list: "Powrót na listę"
+      sidebar_list_of_options: "Lista opcji"
+
 
 
