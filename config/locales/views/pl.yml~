@@ -1,0 +1,9 @@
+
+pl:
+  views:
+    home:
+      index: "Ostatnio dodane"
+    categories:
+      index: "Dodaj kategorię"
+
+
