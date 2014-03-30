@@ -1,0 +1,12 @@
+
+pl:
+  views:
+    home:
+      index: "Ostatnio dodane"
+      menu_label:
+        main: "Główna"
+        category: "Kategorie"
+    categories:
+      index: "Dodaj kategorię"
+
+
