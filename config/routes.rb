@@ -13,6 +13,7 @@ end
 
   resources :categories
   resources :manufacturers
+  resources :products
 
   root to: 'home#index'
 
