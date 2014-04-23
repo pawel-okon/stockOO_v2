@@ -1,0 +1,15 @@
+.page-header
+  %h1 New manufacturer
+= render 'form'
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header Lista opcji:
+      %li.divider
+      %li
+        = link_to manufacturers_path do
+          %i.icon-home
+          Powrót na listę
+        = link_to new_manufacturer_path do
+          %i.icon-plus
+          Dodaj producenta

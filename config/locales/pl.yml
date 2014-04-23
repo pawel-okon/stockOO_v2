@@ -6,9 +6,12 @@ pl:
       menu_label:
         main: "Główna"
         category: "Kategorie"
+        manufacturer: "Producenci"
     categories:
       index: "Lista kategorii" 
       create: "Dodaj kategorię"
+    manufacturers:
+      create: "Dodaj producenta"
     shared:
       sidebar_option_label: "Opcje:"
       sidebar_back_to_list: "Powrót na listę"

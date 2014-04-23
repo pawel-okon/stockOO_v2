@@ -2,7 +2,8 @@ module ApplicationHelper
   def main_menu
     [
       { :url => root_path, :label => t("views.home.menu_label.main") },
-      { :url => categories_path, :label => t("views.home.menu_label.category") }
+      { :url => categories_path, :label => t("views.home.menu_label.category") },
+      { :url => manufacturers_path, :label => t("views.home.menu_label.manufacturer") }
     ]
   end
 
@@ -10,7 +11,8 @@ module ApplicationHelper
     case view_name
     when :categories_index
       [{ :url => new_category_path, :icon => "icon-plus-sign", :label => t("views.categories.create") }]
+    when :manufacturers_index
+      [{ :url => new_manufacturer_path, :icon => "icon-plus-sign", :label => t("views.manufacturers.create") }]
+    end
   end
-end
-
 end

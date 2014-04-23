@@ -12,6 +12,7 @@ StockOOV2::Application.routes.draw do
 end
 
   resources :categories
+  resources :manufacturers
 
   root to: 'home#index'
 
