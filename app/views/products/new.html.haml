@@ -1,0 +1,12 @@
+.page-header
+  %h1 Nowy produkt
+= render 'form'
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header Lista opcji:
+      %li.divider
+      %li
+        = link_to products_path do
+          %i.icon-home
+          Powrót na listę

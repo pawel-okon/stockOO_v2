@@ -1,0 +1,4 @@
+%tr
+  %td= product.name
+  %td= link_to t("actions.edit"), edit_product_path(product), :class => "btn btn-primary"
+  %td= link_to t("actions.delete"), product, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger"

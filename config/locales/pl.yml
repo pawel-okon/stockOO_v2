@@ -7,11 +7,15 @@ pl:
         main: "Główna"
         category: "Kategorie"
         manufacturer: "Producenci"
+        product: "Produkty"
     categories:
       index: "Lista kategorii" 
       create: "Dodaj kategorię"
     manufacturers:
       create: "Dodaj producenta"
+    products:
+      create: "Dodaj produkt"
+      index: "Produkty"
     shared:
       sidebar_option_label: "Opcje:"
       sidebar_back_to_list: "Powrót na listę"

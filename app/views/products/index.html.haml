@@ -1,0 +1,11 @@
+.page-header
+  %h1= "Produkty" 
+%table.table
+  %tr
+    %th Name
+    %th
+    %th
+  = render :partial => "product", :collection => @products
+%br/
+- content_for :sidebar do
+  = render :partial => "shared/sidebar", :locals => { :options =>  sidebar_options(:products_index) }
