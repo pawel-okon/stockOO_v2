@@ -18,9 +18,6 @@
               - main_menu.each do |section|
                 %li{:class => if section[:url] == request.path then "active" else "" end}
                   %a{:href => section[:url]}= section[:label]
-            %ul.nav.pull-right
-              %li
-                = link_to current_user.name, "#"
       .row
         .span8
           = yield
