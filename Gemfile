@@ -42,6 +42,10 @@ gem 'protected_attributes'
 
 gem 'devise', '~> 3.0.0'
 
+group :production do
+  gem 'shelly-dependencies'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
