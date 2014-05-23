@@ -11,6 +11,8 @@ pl:
     categories:
       index: "Lista kategorii" 
       create: "Dodaj kategorię"
+      edit: "Edytuj kategorię"
+      name: "Nazwa"
     manufacturers:
       create: "Dodaj producenta"
     products:
@@ -18,8 +20,13 @@ pl:
       index: "Produkty"
     shared:
       sidebar_option_label: "Opcje:"
-      sidebar_back_to_list: "Powrót na listę"
+      sidebar_back_to_list: "Powrót"
       sidebar_list_of_options: "Lista opcji"
+  actions:
+    edit: "Edycja"
+    delete: "Usuń"
+    confirm: "Czy na pewno chcesz usunąć dany element"
+    error: "Błąd"
 
 
 
