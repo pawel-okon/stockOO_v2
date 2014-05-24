@@ -2,9 +2,10 @@ module ApplicationHelper
   def main_menu
     [
       { :url => root_path, :label => t("views.home.menu_label.main") },
-      { :url => categories_path, :label => t("views.home.menu_label.category") },
+      { :url => categories_path,
+        label: t("views.home.menu_label.category") },
       { :url => manufacturers_path, :label => t("views.home.menu_label.manufacturer") },
-      { :url => products_path, :path => t("views.home.menu_label.product") }
+      { :url => products_path, :label => 'Produkty' }
     ]
   end
 

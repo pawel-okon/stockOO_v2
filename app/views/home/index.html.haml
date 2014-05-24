@@ -1,10 +1,10 @@
 .page-header
-  %h2= t("views.home.index")
+  %h2= t("views.home.products_index")
 %table.table
   %tr
     %th #
     %th
     %th
     %th
-  = render :partial => "category", :collection => @categories
+  = render :partial => "product", :collection => @products
   %table

@@ -2,7 +2,7 @@
 pl:
   views:
     home:
-      index: "Ostatnio dodane"
+      products_index: "Nowe produkty"
       menu_label:
         main: "Główna"
         category: "Kategorie"
