@@ -1,7 +1,7 @@
 %p#notice= notice
 %p
-  %b Name:
+  %b= t("views.categories.name")
   = @manufacturer.name
-= link_to 'Edit', edit_manufacturer_path(@manufacturer)
+= link_to t("views.manufacturers.edit"), edit_manufacturer_path(@manufacturer)
 |
-\#{link_to 'Back', manufacturers_path}
+\#{link_to 'Lista producentów', manufacturers_path}

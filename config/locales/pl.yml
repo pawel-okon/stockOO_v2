@@ -14,7 +14,10 @@ pl:
       edit: "Edytuj kategorię"
       name: "Nazwa"
     manufacturers:
+      index: "Lista producentów"
       create: "Dodaj producenta"
+      edit: "Edytuj producenta"
+      name: "Nazwa"
     products:
       create: "Dodaj produkt"
       index: "Produkty"
@@ -22,6 +25,7 @@ pl:
       sidebar_option_label: "Opcje:"
       sidebar_back_to_list: "Powrót"
       sidebar_list_of_options: "Lista opcji"
+      sidebar_add_manufacturer: "Dodaj producenta"
   actions:
     edit: "Edycja"
     delete: "Usuń"

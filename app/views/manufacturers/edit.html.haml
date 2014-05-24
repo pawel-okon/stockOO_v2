@@ -1,12 +1,12 @@
 .page-header
-  %h1 Editing manufacturer
+  %h2= t("view.manufacturers.create")
 = render 'form'
 - content_for :sidebar do
   .well
     %ul.nav.nav-list
-      %li.nav-header Lista opcji:
+      %li.nav-header= t("views.shared.sidebar_list_of_options")
       %li.divider
       %li
         = link_to manufacturers_path do
           %i.icon-backward
-          Powrót
+          = t("views.shared.sidebar_back_to_list")

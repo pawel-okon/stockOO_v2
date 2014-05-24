@@ -1,8 +1,8 @@
 .page-header
-  %h1 Lista producentów 
+  %h2= t("views.manufacturers.index")
 %table.table
   %tr
-    %th Name
+    %th= t("views.categories.name")
     %th
     %th
   = render :partial => "manufacturer", :collection => @manufacturers
