@@ -21,6 +21,11 @@ pl:
     products:
       create: "Dodaj produkt"
       index: "Produkty"
+      edit: "Edytuj produkt"
+      new: "Nowy produkt"
+      name: "Nazwa"
+    product_template:
+      submit: "Dodaj produkt"
     shared:
       sidebar_option_label: "Opcje:"
       sidebar_back_to_list: "Powrót"
@@ -31,6 +36,15 @@ pl:
     delete: "Usuń"
     confirm: "Czy na pewno chcesz usunąć dany element"
     error: "Błąd"
-
+  helpers:
+    label:
+      product:
+        name: "Nazwa"
+        price: "Cena"
+        barcode: "Kod kreskowy"
+        amount: "Ilość"
+        category_id: "Kategoria"
+        manufacturer_id: "Producent"
+        description: "Opis produktu"
 
 

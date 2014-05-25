@@ -9,7 +9,7 @@
           %li= msg
   = f.hidden_field :user_id, :value => current_user.id
   .control-group
-    = f.label :name, :class => "control-label"
+    = f.label  :name, :class => "control-label"
     %br/
     .controls
       = f.text_field :name, :class => "input-xlarge"
@@ -42,6 +42,6 @@
     = f.label :description, :class => "control-label"
     %br/
     .controls
-      = f.text_area :description, :class => "input-xxlarge", :rows => 10
+      = f.text_area :description, :class => "input-xxlarge", :rows => 5
   .form-actions
-    = f.submit :class => "btn btn-primary"
+    = f.submit t("views.product_template.submit"), :class => "btn btn-primary"

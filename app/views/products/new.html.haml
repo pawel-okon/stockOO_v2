@@ -1,12 +1,13 @@
 .page-header
-  %h1 Nowy produkt
+  %h2= t("views.products.new")
 = render 'form'
 - content_for :sidebar do
   .well
     %ul.nav.nav-list
-      %li.nav-header Lista opcji:
+      %li.nav-header 
+        = t ("views.shared.sidebar_list_of_options")
       %li.divider
       %li
         = link_to products_path do
           %i.icon-home
-          Powrót na listę
+          = t("views.shared.sidebar_back_to_list")
