@@ -42,6 +42,8 @@ end
 
 gem 'protected_attributes'
 
+gem "active_model_serializers"
+
 gem 'devise', '~> 3.0.0'
 
 group :production do
