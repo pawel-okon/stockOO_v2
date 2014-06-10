@@ -1,15 +1,12 @@
 StockOOV2::Application.routes.draw do
-  get "home/index"
-  devise_for :users
+  devise_for :users, controllers: { sessions: "api/v1/sessions" }
+
+  post 'login', to: "api/v1/sessions#create"
 
   namespace :api do
-  namespace :v1 do
-    devise_scope :user do
-      post 'sessions' => 'sessions#create', :as => 'login'
-      delete 'sessions' => 'sessions#destroy', :as => 'logout'
+    namespace :v1 do
     end
   end
-end
 
   resources :categories
   resources :manufacturers
