@@ -1,4 +1,5 @@
-= form_for @category, :html => { :class => "form-horizontal" } do |f|
+= form_for @category, url: url,
+   :html => { :class => "form-horizontal" } do |f|
   - if @category.errors.any?
     #error_explanation
       %h2
@@ -13,4 +14,4 @@
     .controls
       = f.text_field :name, :class => "input-xlarge"
   .form-actions
-    = f.submit t("views.categories.create"), :class => "btn btn-primary"
+    = f.submit @category.new_record? ? t("views.categories.create") : 'Zapisz zmiany', :class => "btn btn-primary"

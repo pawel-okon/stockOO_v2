@@ -1,12 +1,12 @@
 .page-header
-  %h2= t("views.categories.edit") 
-= render 'form'
+  %h2= t("views.categories.edit")
+= render partial: 'form', locals: { url: api_v1_category_path(@category) }
 - content_for :sidebar do
   .well
     %ul.nav.nav-list
       %li.nav-header= t("views.shared.sidebar_list_of_options")
       %li.divider
       %li
-        = link_to categories_path do
+        = link_to api_v1_categories_path do
           %i.icon-backward
           = t("views.shared.sidebar_back_to_list")

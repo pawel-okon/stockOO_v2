@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %b= t("views.categories.name")
+  = @category.name
+= link_to t("views.categories.edit"), edit_api_v1_category_path(@category)
+|
+\#{link_to 'Lista kategorii', api_v1_categories_path}
