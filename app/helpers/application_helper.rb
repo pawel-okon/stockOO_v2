@@ -5,7 +5,7 @@ module ApplicationHelper
       { :url => api_v1_categories_path,
         label: t("views.home.menu_label.category") },
       { :url => api_v1_manufacturers_path, :label => t("views.home.menu_label.manufacturer") },
-      { :url => products_path, :label => 'Produkty' }
+      { :url => api_v1_products_path, :label => 'Produkty' }
     ]
   end
 
@@ -16,7 +16,7 @@ module ApplicationHelper
     when :manufacturers_index
       [{ :url => new_api_v1_manufacturer_path, :icon => "icon-plus-sign", :label => t("views.manufacturers.create") }]
     when :products_index
-      [{ :url => new_product_path, :icon => "icon-plus-sign", :label => t("views.products.create") }]
+      [{ :url => new_api_v1_product_path, :icon => "icon-plus-sign", :label => t("views.products.create") }]
     end
   end
 end

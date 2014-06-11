@@ -1,0 +1,48 @@
+= form_for @product, url: url,
+  :html => { :class => "form-horizontal" } do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@product.errors.count, "error")
+        prohibited this product from being saved:
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+  = f.hidden_field :user_id, :value => current_user.id
+  .control-group
+    = f.label :name, :class => "control-label"
+    %br/
+    .controls
+      = f.text_field :name, :class => "input-xlarge"
+  .control-group
+    = f.label :price, :class => "control-label"
+    %br/
+    .controls
+      = f.text_field :price, :class => "input-xlarge"
+  .control-group
+    = f.label :barcode, :class => "control-label"
+    %br/
+    .controls
+      = f.text_field :barcode, :class => "input-xlarge"
+  .control-group
+    = f.label :amount, :class => "control-label"
+    %br/
+    .controls
+      = f.text_field :amount, :class => "input-xlarge"
+  .control-group
+    = f.label :category_id, :class => "control-label"
+    %br/
+    .controls
+      = f.select :category_id, options_from_collection_for_select(Category.all, :id, :name), {:prompt => "Zaznacz kategorie"}
+  .control-group
+    = f.label :manufacturer_id, :class => "control-label"
+    %br/
+    .controls
+      = f.select :manufacturer_id, options_from_collection_for_select(Manufacturer.all, :id, :name), {:prompt => "Zaznacz producenta"}
+  .control-group
+    = f.label :description, :class => "control-label"
+    %br/
+    .controls
+      = f.text_area :description, :class => "input-xxlarge", :rows => 5
+  .form-actions
+    = f.submit @product.new_record? ? t("views.product_template.submit") : "Zapisz zmiany", :class => "btn btn-primary"
