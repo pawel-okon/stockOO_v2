@@ -1,0 +1,17 @@
+= form_for @manufacturer, url: url,
+  :html => { :class => "form-horizontal" }   do |f|
+  - if @manufacturer.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@manufacturer.errors.count, "error")
+        prohibited this manufacturer from being saved:
+      %ul
+        - @manufacturer.errors.full_messages.each do |msg|
+          %li= msg
+  .control-group
+    = f.label :name, :class => "control-label"
+    %br/
+    .controls
+      = f.text_field :name, :class => "input-xlarge"
+  .form-actions
+    = f.submit @manufacturer.new_record? ? t("views.manufacturers.create") : 'Zapisz zmiany', :class => "btn btn-primary"

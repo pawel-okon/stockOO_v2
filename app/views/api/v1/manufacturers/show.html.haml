@@ -1,0 +1,7 @@
+%p#notice= notice
+%p
+  %b= t("views.categories.name")
+  = @manufacturer.name
+= link_to t("views.manufacturers.edit"), edit_api_v1_manufacturer_path(@manufacturer)
+|
+\#{link_to 'Lista producentów', api_v1_manufacturers_path}

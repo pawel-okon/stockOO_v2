@@ -6,10 +6,10 @@ StockOOV2::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :categories
+      resources :manufacturers
     end
   end
 
-  resources :manufacturers
   resources :products
 
   root to: 'home#index'
