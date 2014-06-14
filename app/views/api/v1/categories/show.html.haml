@@ -1,7 +1,18 @@
-%p#notice= notice
-%p
-  %b= t("views.categories.name")
-  = @category.name
-= link_to t("views.categories.edit"), edit_api_v1_category_path(@category)
-|
-\#{link_to 'Lista kategorii', api_v1_categories_path}
+.well
+  .alert.alert-success#notice=notice
+  %p
+    %b= t("views.categories.name")
+    = @category.name
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header= t("views.shared.sidebar_list_of_options")
+      %li.divider
+      %li
+        = link_to api_v1_categories_path do
+          %i.icon-backward
+          = t("views.shared.sidebar_back_to_list")
+        = link_to edit_api_v1_category_path(@category) do
+          %i.icon-edit
+          = 'Zmień ponownie'
+
