@@ -1,6 +1,7 @@
 .page-header
   %h2= t("view.manufacturers.create")
-= render partial: 'form', locals: { url: api_v1_manufacturer_path(@manufacturer)}
+= render partial: 'form',
+  locals: { url: api_v1_manufacturer_path(@manufacturer)}
 - content_for :sidebar do
   .well
     %ul.nav.nav-list

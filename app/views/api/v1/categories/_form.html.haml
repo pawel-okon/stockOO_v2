@@ -14,4 +14,6 @@
     .controls
       = f.text_field :name, :class => "input-xlarge"
   .form-actions
-    = f.submit @category.new_record? ? t("views.categories.create") : 'Zapisz zmiany', :class => "btn btn-primary"
+    = f.submit @category.new_record? ? t("views.categories.create") : 'Zapisz zmiany',
+      :class => "btn btn-primary"
+    

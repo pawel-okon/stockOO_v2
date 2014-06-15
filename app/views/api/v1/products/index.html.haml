@@ -8,4 +8,5 @@
   = render :partial => "product", :collection => @products
 %br/
 - content_for :sidebar do
-  = render :partial => "shared/sidebar", :locals => { :options =>  sidebar_options(:products_index) }
+  = render :partial => "shared/sidebar",
+    :locals => { :options =>  sidebar_options(:products_index) }
