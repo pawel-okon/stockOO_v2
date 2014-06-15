@@ -1,10 +1,17 @@
-%p#notice= notice
-%p
-  %b= t("views.products.name")
-  = @product.name
-%p
-  %b Description:
-  = @product.description
-= link_to t("views.products.edit"), edit_api_v1_product_path(@product)
-|
-\#{link_to 'Lista produktów', api_v1_products_path}
+.well
+  .alert.alert-success#notice=notice
+  %p
+    %b= t("views.products.name")
+    = @product.name
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header= t("views.shared.sidebar_list_of_options")
+      %li.divider
+      %li
+        = link_to api_v1_products_path do
+          %i.icon-backward
+          = t("views.shared.sidebar_back_to_list")
+        = link_to edit_api_v1_product_path(@product) do
+          %i.icon-edit
+          = 'Zmień ponownie'
