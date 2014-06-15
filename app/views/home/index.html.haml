@@ -8,3 +8,18 @@
     %th
   = render :partial => "product", :collection => @products
   %table
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header= t("views.shared.sidebar_list_of_options")
+      %li.divider
+      %li
+        = link_to new_api_v1_product_path do
+          %i.icon-plus-sign
+          = t("views.products.create")
+        = link_to new_api_v1_category_path do
+          %i.icon-plus-sign
+          = t("views.categories.create")
+        = link_to new_api_v1_manufacturer_path do
+          %i.icon-plus-sign
+          = t("views.manufacturers.create")
