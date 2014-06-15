@@ -1,7 +1,17 @@
-%p#notice= notice
-%p
-  %b= t("views.categories.name")
-  = @manufacturer.name
-= link_to t("views.manufacturers.edit"), edit_api_v1_manufacturer_path(@manufacturer)
-|
-\#{link_to 'Lista producentów', api_v1_manufacturers_path}
+.well
+  .alert.alert-success#notice=notice
+  %p
+    %b= t("views.categories.name")
+    = @manufacturer.name
+- content_for :sidebar do
+  .well
+    %ul.nav.nav-list
+      %li.nav-header= t("views.shared.sidebar_list_of_options")
+      %li.divider
+      %li
+        = link_to api_v1_manufacturers_path do
+          %i.icon-backward
+          = t("views.shared.sidebar_back_to_list")
+        = link_to edit_api_v1_manufacturer_path(@manufacturer) do
+          %i.icon-edit
+          = 'Zmień ponownie'
