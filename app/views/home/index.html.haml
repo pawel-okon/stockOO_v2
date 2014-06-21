@@ -8,6 +8,29 @@
     %th
   = render :partial => "product", :collection => @products
   %table
+
+.page-header
+  %h2= 'Nowe kategorie'
+%table.table.table-hover
+  %tr
+    %th Nazwa 
+    %th
+    %th
+    %th
+  = render :partial => "category", :collection => @categories
+  %table
+.page-header
+
+  %h2= 'Nowi producenci'
+%table.table.table-hover
+  %tr
+    %th Nazwa 
+    %th
+    %th
+    %th
+  = render :partial => "manufacturer", :collection => @manufacturers
+  %table
+
 - content_for :sidebar do
   .well
     %ul.nav.nav-list
