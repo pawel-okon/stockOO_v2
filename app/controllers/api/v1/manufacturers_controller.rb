@@ -39,6 +39,7 @@ class Api::V1::ManufacturersController < ApplicationController
   # POST /manufacturers
   # POST /manufacturers.json
   def create
+    @manufacturer = Manufacturer.new(manufacturer_params)
     respond_to do |format|
       if @manufacturer.save
         format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully created.' }
@@ -54,7 +55,7 @@ class Api::V1::ManufacturersController < ApplicationController
   # PUT /manufacturers/1.json
   def update
     respond_to do |format|
-      if @manufacturer.update_attributes(params[:manufacturer])
+      if @manufacturer.update_attributes(manufacturer_params)
         format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully updated.' }
         format.json { head :no_content }
       else
@@ -79,5 +80,9 @@ class Api::V1::ManufacturersController < ApplicationController
 
   def set_manufacturer
     @manufacturer = Manufacturer.find(params[:id])
+  end
+
+  def manufacturer_params
+    params.require(:manufacturer).permit(:name)
   end
 end

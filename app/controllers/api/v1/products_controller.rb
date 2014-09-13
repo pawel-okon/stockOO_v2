@@ -39,7 +39,7 @@ class Api::V1::ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
+    @product = Product.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -56,7 +56,7 @@ class Api::V1::ProductsController < ApplicationController
   # PUT /products/1.json
   def update
     respond_to do |format|
-      if @product.update_attributes(params[:product])
+      if @product.update_attributes(product_params)
         format.html { redirect_to api_v1_product_path(@product), notice: 'Product was successfully updated.' }
         format.json { head :no_content }
       else
@@ -81,5 +81,10 @@ class Api::V1::ProductsController < ApplicationController
 
   def set_product
     @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.require(:product).permit(:description, :name, :user_id, :price, :barcode,
+      :amount, :category_id, :manufacturer_id)
   end
 end

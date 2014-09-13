@@ -39,7 +39,7 @@ class Api::V1::CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(params[:category])
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -56,7 +56,7 @@ class Api::V1::CategoriesController < ApplicationController
   # PUT /categories/1.json
   def update
     respond_to do |format|
-      if @category.update_attributes(params[:category])
+      if @category.update_attributes(category_params)
         format.html { redirect_to api_v1_category_path(@category), notice: 'Category was successfully updated.' }
         format.json { head :no_content }
       else
@@ -81,5 +81,9 @@ class Api::V1::CategoriesController < ApplicationController
 
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def category_params
+    params.require(:category).permit(:name)
   end
 end

@@ -33,13 +33,13 @@
     = f.label :category_id, :class => "control-label"
     %br/
     .controls
-      = f.select :category_id, options_from_collection_for_select(Category.all, :id, :name),
+      = f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, @product.category_id),
         {:prompt => "Zaznacz kategorie"}
   .control-group
     = f.label :manufacturer_id, :class => "control-label"
     %br/
     .controls
-      = f.select :manufacturer_id, options_from_collection_for_select(Manufacturer.all, :id, :name),
+      = f.select :manufacturer_id, options_from_collection_for_select(Manufacturer.all, :id, :name, @product.manufacturer_id),
         {:prompt => "Zaznacz producenta"}
   .control-group
     = f.label :description, :class => "control-label"
