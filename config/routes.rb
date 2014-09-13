@@ -1,4 +1,4 @@
-StockOOV2::Application.routes.draw do
+Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "api/v1/sessions" }
 
   post 'login', to: "api/v1/sessions#create"
