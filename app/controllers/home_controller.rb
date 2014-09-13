@@ -1,10 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @products = Product.where("created_at >= ?", Time.now.midnight)
-      .order("created_at DESC")
-    @categories = Category.where("created_at >= ?", Time.now.midnight)
-      .order("created_at DESC")
-    @manufacturers = Manufacturer.where("created_at >= ?", Time.now.midnight)
-      .order("created_at DESC")
+    @products = Product.from_current_day.ordered
+    @categories = Category.from_current_day.ordered
+    @manufacturers = Manufacturer.from_current_day.ordered
   end
 end

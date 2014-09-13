@@ -1,4 +1,6 @@
 class Api::V1::ManufacturersController < ApplicationController
+  before_action :set_manufacturer, only: [:show, :edit, :update, :destroy]
+
   # GET /manufacturers
   # GET /manufacturers.json
   def index
@@ -13,8 +15,6 @@ class Api::V1::ManufacturersController < ApplicationController
   # GET /manufacturers/1
   # GET /manufacturers/1.json
   def show
-    @manufacturer = Manufacturer.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @manufacturer }
@@ -34,14 +34,11 @@ class Api::V1::ManufacturersController < ApplicationController
 
   # GET /manufacturers/1/edit
   def edit
-    @manufacturer = Manufacturer.find(params[:id])
   end
 
   # POST /manufacturers
   # POST /manufacturers.json
   def create
-    @manufacturer = Manufacturer.new(params[:manufacturer])
-
     respond_to do |format|
       if @manufacturer.save
         format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully created.' }
@@ -56,8 +53,6 @@ class Api::V1::ManufacturersController < ApplicationController
   # PUT /manufacturers/1
   # PUT /manufacturers/1.json
   def update
-    @manufacturer = Manufacturer.find(params[:id])
-
     respond_to do |format|
       if @manufacturer.update_attributes(params[:manufacturer])
         format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully updated.' }
@@ -72,12 +67,17 @@ class Api::V1::ManufacturersController < ApplicationController
   # DELETE /manufacturers/1
   # DELETE /manufacturers/1.json
   def destroy
-    @manufacturer = Manufacturer.find(params[:id])
     @manufacturer.destroy
 
     respond_to do |format|
       format.html { redirect_to api_v1_manufacturers_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def set_manufacturer
+    @manufacturer = Manufacturer.find(params[:id])
   end
 end
