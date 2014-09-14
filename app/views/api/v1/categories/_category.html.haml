@@ -1,5 +1,5 @@
 %tr
-  %td= category.name
+  %td= link_to category.name, api_v1_category_path(category)
   %td= link_to t("actions.edit"), edit_api_v1_category_path(category),
     :class => "btn btn-primary"
   %td= link_to t("actions.delete"), api_v1_category_path(category),

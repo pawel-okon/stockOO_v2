@@ -1,0 +1,9 @@
+%nav.navbar.navbar-inverse{role: "navigation"}
+  .navbar-inner
+    .container
+      %a.brand{href: root_path}
+        StockOO
+      %ul.nav
+        - main_menu.each do |section|
+          %li{class: (section[:url] == request.path) ? "active" : "" }
+            = link_to section[:label], section[:url]

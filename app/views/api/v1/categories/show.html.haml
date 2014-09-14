@@ -1,18 +1,10 @@
-.well
-  .alert.alert-success#notice=notice
-  %p
-    %b= t("views.categories.name")
-    = @category.name
-- content_for :sidebar do
-  .well
-    %ul.nav.nav-list
-      %li.nav-header= t("views.shared.sidebar_list_of_options")
-      %li.divider
-      %li
-        = link_to api_v1_categories_path do
-          %i.icon-backward
-          = t("views.shared.sidebar_back_to_list")
-        = link_to edit_api_v1_category_path(@category) do
-          %i.icon-edit
-          = 'Zmień ponownie'
+.page-header
+  %h2= t("views.categories.show")
 
+%p
+  %b= t("views.categories.name")
+  = @category.name
+
+- content_for :sidebar do
+  = render :partial => "shared/sidebar",
+    :locals => { :options =>  sidebar_options(:categories_show) }

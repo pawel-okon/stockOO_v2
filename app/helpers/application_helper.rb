@@ -15,6 +15,14 @@ module ApplicationHelper
     when :categories_index
       [{ :url => new_api_v1_category_path, :icon => "icon-plus-sign",
          :label => t("views.categories.create") }]
+    when :categories_show
+      [{ url: api_v1_categories_path, icon: 'icon-backward',
+         label: t("views.shared.sidebar_back_to_list") },
+      { url: edit_api_v1_category_path(@category), icon: 'icon-edit',
+         label: 'Edycja' }]
+    when :categories_create_edit
+      [{ url: api_v1_categories_path, icon: 'icon-backward',
+         label: t("views.shared.sidebar_back_to_list") }]
     when :manufacturers_index
       [{ :url => new_api_v1_manufacturer_path, :icon => "icon-plus-sign",
          :label => t("views.manufacturers.create") }]
@@ -23,6 +31,4 @@ module ApplicationHelper
          :label => t("views.products.create") }]
     end
   end
-
-
 end

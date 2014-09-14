@@ -1,35 +1,35 @@
-.page-header
-  %h2= t("views.home.products_index")
-%table.table.table-hover
-  %tr
-    %th Nazwa 
-    %th
-    %th
-    %th
-  = render :partial => "product", :collection => @products
-  %table
+- if @products.any?
+  .page-header
+    %h2= t("views.home.products_index")
+  %table.table.table-hover
+    %tr
+      %th Nazwa
+      %th
+      %th
+      %th
+    = render :partial => "product", :collection => @products
 
-.page-header
-  %h2= 'Nowe kategorie'
-%table.table.table-hover
-  %tr
-    %th Nazwa 
-    %th
-    %th
-    %th
-  = render :partial => "category", :collection => @categories
-  %table
-.page-header
+- if @categories.any?
+  .page-header
+    %h2= 'Nowe kategorie'
+  %table.table.table-hover
+    %tr
+      %th Nazwa
+      %th
+      %th
+      %th
+    = render :partial => "category", :collection => @categories
 
-  %h2= 'Nowi producenci'
-%table.table.table-hover
-  %tr
-    %th Nazwa 
-    %th
-    %th
-    %th
-  = render :partial => "manufacturer", :collection => @manufacturers
-  %table
+- if @manufacturers.any?
+  .page-header
+    %h2= 'Nowi producenci'
+  %table.table.table-hover
+    %tr
+      %th Nazwa
+      %th
+      %th
+      %th
+    = render :partial => "manufacturer", :collection => @manufacturers
 
 - content_for :sidebar do
   .well

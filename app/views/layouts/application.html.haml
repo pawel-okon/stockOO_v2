@@ -6,17 +6,10 @@
     = csrf_meta_tags
     %body
       .container
-        %nav.navbar.navbar-inverse{role: "navigation"}
-          .navbar-inner
-            .container
-              %a.brand{:href => root_path}
-                StockOO
-              %ul.nav
-                - main_menu.each do |section|
-                  %li{:class => if section[:url] == request.path then "active" else "" end}
-                    %a{:href => section[:url]}= section[:label]
+        = render partial: "shared/navi"
         .row
           .span8
+            = render partial: "shared/alert"
             = yield
           .span4
             = yield :sidebar

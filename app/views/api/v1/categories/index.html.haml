@@ -6,7 +6,7 @@
     %th
     %th
   = render :partial => "category", :collection => @categories
-%br/
+
 - content_for :sidebar do
   = render :partial => "shared/sidebar",
     :locals => { :options =>  sidebar_options(:categories_index) }

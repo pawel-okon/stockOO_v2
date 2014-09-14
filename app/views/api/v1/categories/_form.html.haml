@@ -1,19 +1,13 @@
-= form_for @category, url: url,
+= form_for [:api, :v1, category],
    :html => { :class => "form-horizontal" } do |f|
-  - if @category.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@category.errors.count, "error")
-        prohibited this category from being saved:
-      %ul
-        - @category.errors.full_messages.each do |msg|
-          %li= msg
+
+  = render partial: 'shared/form_validation', locals: { object: category }
+
   .control-group
     = f.label :name, :class => "control-label"
-    %br/
     .controls
       = f.text_field :name, :class => "input-xlarge"
+
   .form-actions
-    = f.submit @category.new_record? ? t("views.categories.create") : 'Zapisz zmiany',
+    = f.submit category.new_record? ? t("views.categories.create") : 'Zapisz zmiany',
       :class => "btn btn-primary"
-    
