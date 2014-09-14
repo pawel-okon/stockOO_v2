@@ -18,7 +18,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
@@ -58,4 +58,22 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include FactoryGirl::Syntax::Methods
+  config.include Devise::TestHelpers, type: :controller
+  config.include DeviseHelper, type: :controller
+end
+
+def check_json_response(options = {})
+  fixture_file_name = "#{options[:object].class.to_s.underscore}_#{options[:action]}.json"
+  response = File.read("#{Rails.root}/spec/fixtures/json_responses/#{fixture_file_name}").
+    strip
+  options[:object].attributes.each do |attr, val|
+    response.gsub!(attr.upcase, val.to_s)
+  end
+  JSON.parse(response)
+end
+
+def json_response
+  JSON.parse(response.body)
 end

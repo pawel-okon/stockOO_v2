@@ -3,7 +3,8 @@
     .container
       %a.brand{href: root_path}
         StockOO
-      %ul.nav
-        - main_menu.each do |section|
-          %li{class: (section[:url] == request.path) ? "active" : "" }
-            = link_to section[:label], section[:url]
+      - if current_user
+        %ul.nav
+          - main_menu.each do |section|
+            %li{class: (section[:url] == request.path) ? "active" : "" }
+              = link_to section[:label], section[:url]
