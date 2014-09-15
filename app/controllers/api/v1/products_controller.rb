@@ -43,7 +43,7 @@ class Api::V1::ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to api_v1_product_path(@product), notice: 'Product was successfully created.' }
+        format.html { redirect_to api_v1_product_path(@product), notice: 'Produkt został pomyślnie dodany.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -57,7 +57,7 @@ class Api::V1::ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update_attributes(product_params)
-        format.html { redirect_to api_v1_product_path(@product), notice: 'Product was successfully updated.' }
+        format.html { redirect_to api_v1_product_path(@product), notice: 'Produkt został pomyślnie zaktualizowany' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

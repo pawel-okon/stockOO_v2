@@ -9,7 +9,7 @@ class Api::V1::SessionsController < Devise::SessionsController
       f.json {
         render :status => 200,
                :json => { :success => true,
-                          :info => "Logged in",
+                          :info => "Zalogowano",
                           :data => { :auth_token => current_user.authentication_token } }
       }
     end
@@ -19,11 +19,11 @@ class Api::V1::SessionsController < Devise::SessionsController
     warden.authenticate!(:scope => resource_name, :recall => "#{controller_path}#failure")
     current_user.update_column(:authentication_token, nil)
     respond_to do |f|
-      f.html { redirect_to root_url, notice: "Log out!" }
+      f.html { redirect_to root_url, notice: "Wylogowano!" }
       f.json {
         render :status => 200,
                :json => { :success => true,
-                          :info => "Logged out",
+                          :info => "Wylogowano",
                           :data => {} }
       }
     end
@@ -31,11 +31,11 @@ class Api::V1::SessionsController < Devise::SessionsController
 
   def failure
     respond_to do |f|
-      f.html { redirect_to root_url, alert: "Something went wrong." }
+      f.html { redirect_to root_url, alert: "Coś poszło nie tak." }
       f.json {
         render :status => 401,
                :json => { :success => false,
-                          :info => "Login Failed",
+                          :info => "Logowanie niepowiodło się",
                           :data => {} }
       }
     end

@@ -42,7 +42,7 @@ class Api::V1::ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(manufacturer_params)
     respond_to do |format|
       if @manufacturer.save
-        format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully created.' }
+        format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Producent został pomyślnie dodany.' }
         format.json { render json: @manufacturer, status: :created, location: @manufacturer }
       else
         format.html { render action: "new" }
@@ -56,7 +56,7 @@ class Api::V1::ManufacturersController < ApplicationController
   def update
     respond_to do |format|
       if @manufacturer.update_attributes(manufacturer_params)
-        format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Manufacturer was successfully updated.' }
+        format.html { redirect_to api_v1_manufacturer_path(@manufacturer), notice: 'Producent został pomyślnie zaktualizowany' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

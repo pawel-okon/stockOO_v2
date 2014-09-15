@@ -43,7 +43,7 @@ class Api::V1::CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to api_v1_category_path(@category), notice: 'Category was successfully created.' }
+        format.html { redirect_to api_v1_category_path(@category), notice: 'Kategoria została pomyślnie dodana.' }
         format.json { render json: @category, status: :created, location: @category }
       else
         format.html { render action: "new" }
@@ -57,7 +57,7 @@ class Api::V1::CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update_attributes(category_params)
-        format.html { redirect_to api_v1_category_path(@category), notice: 'Category was successfully updated.' }
+        format.html { redirect_to api_v1_category_path(@category), notice: 'Kategoria została pomyślnie zaktualizowana.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
