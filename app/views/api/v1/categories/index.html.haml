@@ -1,10 +1,6 @@
 .page-header
   %h2= t("views.categories.index")
 %table.table.table-hover
-  %tr
-    %th= t("views.categories.name")
-    %th
-    %th
   = render :partial => "category", :collection => @categories
 
 - content_for :sidebar do
