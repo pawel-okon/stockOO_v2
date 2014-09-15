@@ -3,7 +3,9 @@
 
 %p
   %b= t("views.categories.name")
-  = @category.name
+
+%table.table.table-bordered
+  =render :partial => "show"
 
 - content_for :sidebar do
   = render :partial => "shared/sidebar",

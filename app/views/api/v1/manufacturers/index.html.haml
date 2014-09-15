@@ -1,12 +1,14 @@
 .page-header
   %h2= t("views.manufacturers.index")
+
 %table.table.table-hover
   %tr
     %th= t("views.categories.name")
     %th
     %th
+
   = render :partial => "manufacturer", :collection => @manufacturers
-%br/
+
 - content_for :sidebar do
   = render :partial => "shared/sidebar",
     :locals => { :options =>  sidebar_options(:manufacturers_index) }

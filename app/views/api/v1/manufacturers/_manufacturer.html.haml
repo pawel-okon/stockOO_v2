@@ -1,5 +1,5 @@
 %tr
-  %td= manufacturer.name
+  %td= link_to manufacturer.name, api_v1_manufacturer_path(manufacturer)
   %td= link_to t("actions.edit"), edit_api_v1_manufacturer_path(manufacturer),
     :class => "btn btn-primary"
   %td= link_to t("actions.delete"), api_v1_manufacturer_path(manufacturer),

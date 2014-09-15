@@ -1,48 +1,38 @@
 - if @products.any?
   .page-header
     %h2= t("views.home.products_index")
+
   %table.table.table-hover
-    %tr
-      %th Nazwa
-      %th
-      %th
-      %th
     = render :partial => "product", :collection => @products
 
 - if @categories.any?
   .page-header
     %h2= 'Nowe kategorie'
+
   %table.table.table-hover
-    %tr
-      %th Nazwa
-      %th
-      %th
-      %th
     = render :partial => "category", :collection => @categories
 
 - if @manufacturers.any?
   .page-header
     %h2= 'Nowi producenci'
+
   %table.table.table-hover
-    %tr
-      %th Nazwa
-      %th
-      %th
-      %th
     = render :partial => "manufacturer", :collection => @manufacturers
 
 - content_for :sidebar do
-  .well
-    %ul.nav.nav-list
-      %li.nav-header= t("views.shared.sidebar_list_of_options")
-      %li.divider
-      %li
-        = link_to new_api_v1_product_path do
-          %i.icon-plus-sign
-          = t("views.products.create")
-        = link_to new_api_v1_category_path do
-          %i.icon-plus-sign
-          = t("views.categories.create")
-        = link_to new_api_v1_manufacturer_path do
-          %i.icon-plus-sign
-          = t("views.manufacturers.create")
+  =render :partial => "shared/sidebar",
+    :locals => { :options =>  sidebar_options(:main_page) }
+  -#.well
+    -#%ul.nav.nav-list
+      -#%li.nav-header= t("views.shared.sidebar_list_of_options")
+      -#%li.divider
+      -#%li
+        -#= link_to new_api_v1_product_path do
+          -#%i.icon-plus-sign
+          -#= t("views.products.create")
+        -#= link_to new_api_v1_category_path do
+          -#%i.icon-plus-sign
+          -#= t("views.categories.create")
+        -#= link_to new_api_v1_manufacturer_path do
+          -#%i.icon-plus-sign
+          -#= t("views.manufacturers.create")

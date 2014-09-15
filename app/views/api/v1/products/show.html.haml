@@ -1,17 +1,9 @@
-.well
-  .alert.alert-success#notice=notice
-  %p
-    %b= t("views.products.name")
-    = @product.name
+.page-header
+  %h2= t("views.manufacturer.show")
+
+%table.table.table-bordered
+  =render :partial => "show"
+
 - content_for :sidebar do
-  .well
-    %ul.nav.nav-list
-      %li.nav-header= t("views.shared.sidebar_list_of_options")
-      %li.divider
-      %li
-        = link_to api_v1_products_path do
-          %i.icon-backward
-          = t("views.shared.sidebar_back_to_list")
-        = link_to edit_api_v1_product_path(@product) do
-          %i.icon-edit
-          = 'Zmień ponownie'
+  =render :partial => "shared/sidebar",
+    :locals => { :options => sidebar_options(:products_show) }

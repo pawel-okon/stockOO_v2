@@ -1,5 +1,5 @@
 %tr
-  %td= product.name
+  %td= link_to product.name, api_v1_product_path(product)
   %td
   %td
   %td= product.created_at.strftime("%H:%M")

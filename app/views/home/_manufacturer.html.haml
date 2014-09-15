@@ -1,5 +1,5 @@
 %tr
-  %td= manufacturer.name
+  %td= link_to manufacturer.name, api_v1_manufacturer_path(manufacturer)
   %td
   %td
   %td= manufacturer.created_at.strftime("%H:%M")

@@ -9,5 +9,5 @@ class Product < ActiveRecord::Base
   validates_presence_of :name
   validates :category, presence: true
   validates :manufacturer, presence: true
-  validates :user, presence: true
+#  validates :user, presence: true
 end

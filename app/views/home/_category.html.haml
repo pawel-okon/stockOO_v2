@@ -1,5 +1,5 @@
 %tr
-  %td= category.name
+  %td= link_to category.name, api_v1_category_path(category)
   %td
   %td
   %td= category.created_at.strftime("%H:%M")
