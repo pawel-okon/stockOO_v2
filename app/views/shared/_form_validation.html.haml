@@ -1,8 +1,8 @@
 - if object.errors.any?
   .alert.alert-danger
     %h2
-      = pluralize(object.errors.count, "error")
-      prohibited this object from being saved:
+      = pluralize(object.errors.count, "Błąd")
+      uniemożliwił zapisanie:
     %ul
       - object.errors.full_messages.each do |msg|
         %li= msg

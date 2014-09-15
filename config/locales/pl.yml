@@ -9,7 +9,7 @@ pl:
         manufacturer: "Producenci"
         product: "Produkty"
     categories:
-      index: "Lista kategorii" 
+      index: "Lista kategorii"
       create: "Dodaj kategorię"
       edit: "Edytuj kategorię"
       name: "Nazwa"
@@ -46,5 +46,24 @@ pl:
         category_id: "Kategoria"
         manufacturer_id: "Producent"
         description: "Opis produktu"
+  activerecord:
+    errors:
+      models:
+        category:
+          attributes:
+            name:
+              blank: "nie może być pusta"
+        manufacturer:
+          attributes:
+            name:
+              blank: "nie może być pusta"
+        product:
+          attributes:
+            name:
+              blank: "nie może być pusta"
+            category:
+              blank: "nie może być pusta"
+            manufacturer:
+              blank: "nie może być pusta"
 
 
